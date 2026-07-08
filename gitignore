@@ -1,0 +1,16 @@
+# Eclipse
+.settings/
+.project
+.classpath
+
+# Build
+target/
+build/
+bin/
+
+# Tomcat
+Servers/
+
+# OS files
+.DS_Store
+ 
