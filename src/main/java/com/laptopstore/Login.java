@@ -21,7 +21,7 @@ public class Login extends HttpServlet {
     // Database Details
     static final String DB_URL = "jdbc:mysql://localhost:3307/LaptopStore";
     static final String USER = "root";
-    static final String PASS = "rawal324";
+    static final String PASS = "YOUR_DATABASE_PASSWORD";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
