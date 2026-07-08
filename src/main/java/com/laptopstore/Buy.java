@@ -19,7 +19,7 @@ public class Buy extends HttpServlet {
     // Database Details
     private static final String DB_URL = "jdbc:mysql://localhost:3307/LaptopStore";
     private static final String USER = "root";
-    private static final String PASS = "rawal324";
+    private static final String PASS = "YOUR_DATABASE_PASSWORD";
 
     @Override
     protected void doPost(HttpServletRequest request,
