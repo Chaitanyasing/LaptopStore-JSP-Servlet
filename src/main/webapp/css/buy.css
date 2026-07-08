@@ -1,0 +1,295 @@
+@charset "UTF-8";
+@charset "UTF-8";
+
+/* ===========================
+   Global
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:40px 20px;
+    background:linear-gradient(-45deg,#141E30,#243B55,#000428,#004e92);
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+    position:relative;
+    overflow:auto;
+}
+
+@keyframes bgAnimation{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* ===========================
+   Background Circles
+=========================== */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    background:rgba(255,255,255,.12);
+    border-radius:50%;
+    top:-100px;
+    left:-100px;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    background:rgba(255,255,255,.10);
+    border-radius:50%;
+    bottom:-120px;
+    right:-120px;
+}
+
+/* ===========================
+   Container
+=========================== */
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===========================
+   Buy Box
+=========================== */
+
+.buy-box{
+    width:520px;
+    padding:40px;
+    border-radius:20px;
+    background:rgba(255,255,255,.13);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.buy-box h1{
+    text-align:center;
+    color:#fff;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+/* ===========================
+   Product Details
+=========================== */
+
+.product{
+    background:rgba(255,255,255,.10);
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:30px;
+}
+
+.product h2{
+    color:#00ffd5;
+    margin-bottom:15px;
+}
+
+.product p{
+    color:white;
+    margin:10px 0;
+    font-size:16px;
+}
+
+/* ===========================
+   Input Box
+=========================== */
+
+.inputBox{
+    position:relative;
+    margin-bottom:25px;
+}
+
+.inputBox input,
+.inputBox textarea{
+
+    width:100%;
+    border:2px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.08);
+    color:white;
+    outline:none;
+    border-radius:12px;
+    font-size:16px;
+    transition:.3s;
+
+}
+
+.inputBox input{
+    height:58px;
+    padding:22px 15px 8px;
+}
+
+.inputBox textarea{
+    padding:20px 15px;
+    resize:none;
+}
+
+/* Floating Label */
+
+.inputBox label{
+
+    position:absolute;
+    left:15px;
+    top:17px;
+    color:white;
+    font-weight:700;
+    pointer-events:none;
+    transition:.3s;
+
+}
+
+/* Input Focus */
+
+.inputBox input:focus,
+.inputBox textarea:focus{
+
+    border-color:#00ffd5;
+    box-shadow:0 0 12px rgba(0,255,213,.5);
+
+}
+
+/* Floating Effect */
+
+.inputBox input:focus + label,
+.inputBox input:valid + label{
+
+    top:-10px;
+    left:12px;
+    background:#2575fc;
+    padding:2px 8px;
+    font-size:13px;
+    border-radius:5px;
+
+}
+
+/* Textarea Label */
+
+.inputBox textarea:focus + label,
+.inputBox textarea:valid + label{
+
+    top:-10px;
+    left:12px;
+    background:#2575fc;
+    padding:2px 8px;
+    font-size:13px;
+    border-radius:5px;
+
+}
+
+/* ===========================
+   Button
+=========================== */
+
+.btn{
+
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:700;
+    color:white;
+    background:linear-gradient(90deg,#00dbde,#fc00ff);
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,255,213,.6);
+
+}
+
+/* ===========================
+   Bottom Link
+=========================== */
+
+.bottom{
+
+    margin-top:25px;
+    text-align:center;
+
+}
+
+.bottom a{
+
+    color:#00ffd5;
+    text-decoration:none;
+    font-weight:700;
+
+}
+
+.bottom a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:600px){
+
+    .buy-box{
+
+        width:100%;
+        padding:30px;
+
+    }
+
+    .buy-box h1{
+
+        font-size:28px;
+
+    }
+
+}

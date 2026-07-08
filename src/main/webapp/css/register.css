@@ -1,0 +1,320 @@
+@charset "UTF-8";
+@charset "UTF-8";
+
+/* ==========================
+   Global
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ==========================
+   Animated Background
+========================== */
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:40px 20px;
+    background:linear-gradient(-45deg,#141E30,#243B55,#000428,#004e92);
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+    overflow:auto;
+    position:relative;
+}
+
+@keyframes bgAnimation{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* ==========================
+   Background Circles
+========================== */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    top:-120px;
+    left:-120px;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:rgba(255,255,255,.10);
+    bottom:-140px;
+    right:-140px;
+}
+
+/* ==========================
+   Container
+========================== */
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ==========================
+   Register Box
+========================== */
+
+.register-box{
+
+    width:460px;
+    padding:40px;
+    border-radius:20px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+    animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ==========================
+   Heading
+========================== */
+
+.register-box h1{
+
+    text-align:center;
+    color:white;
+    font-size:34px;
+    margin-bottom:10px;
+    font-weight:700;
+
+}
+
+.register-box p{
+
+    text-align:center;
+    color:#f1f1f1;
+    margin-bottom:35px;
+    font-size:15px;
+
+}
+
+/* ==========================
+   Input Box
+========================== */
+
+.inputBox{
+
+    position:relative;
+    margin-bottom:25px;
+
+}
+
+.inputBox input{
+
+    width:100%;
+    height:58px;
+
+    padding:22px 15px 8px;
+
+    border:2px solid rgba(255,255,255,.35);
+    border-radius:12px;
+
+    outline:none;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+/* Hide Placeholder */
+
+.inputBox input::placeholder{
+
+    color:transparent;
+
+}
+
+/* Floating Label */
+
+.inputBox label{
+
+    position:absolute;
+    left:15px;
+    top:17px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+}
+
+/* Focus Effect */
+
+.inputBox input:focus{
+
+    border-color:#00ffd5;
+
+    box-shadow:0 0 12px rgba(0,255,213,.5);
+
+}
+
+/* Floating Animation */
+
+.inputBox input:focus + label,
+.inputBox input:valid + label{
+
+    top:-10px;
+    left:12px;
+
+    background:#2575fc;
+
+    color:white;
+
+    font-size:13px;
+
+    padding:2px 8px;
+
+    border-radius:5px;
+
+}
+
+/* ==========================
+   Button
+========================== */
+
+.btn{
+
+    width:100%;
+    height:55px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    background:linear-gradient(90deg,#00dbde,#fc00ff);
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(0,255,213,.6);
+
+}
+
+/* ==========================
+   Bottom Text
+========================== */
+
+.bottom{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.bottom a{
+
+    color:#00ffd5;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+.bottom a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:500px){
+
+    .register-box{
+
+        width:100%;
+
+        padding:30px;
+
+    }
+
+    .register-box h1{
+
+        font-size:28px;
+
+    }
+
+}
